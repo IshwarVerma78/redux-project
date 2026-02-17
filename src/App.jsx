@@ -1,14 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import { fetchPhotos, fetchVideos } from './api/mediaApi'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // function getPhotos(){
+  //   fetchPhotos()
+  // }
 
   return (
     <>
-      <h1 className='text-2xl'>Heyyyy I am ishwawr verma</h1>
+      <button onClick={async ()=>{
+        const data = await fetchPhotos('cat')
+        console.log(data.results);
+        }}>Get Photos</button>
+
+      <button onClick={async ()=>{
+        const data = await fetchVideos('cat')
+        console.log(data.videos);
+        }}>Get Videos</button>
     </>
   )
 }
