@@ -1,23 +1,15 @@
-
 import './App.css'
-import { fetchPhotos, fetchVideos } from './api/mediaApi'
+import ResultGrid from './components/ResultGrid';
+import SearchBar from './components/SearchBar';
+import Tabs from './components/Tabs';
 
 function App() {
-  // function getPhotos(){
-  //   fetchPhotos()
-  // }
 
   return (
     <>
-      <button onClick={async ()=>{
-        const data = await fetchPhotos('cat')
-        console.log(data.results);
-        }}>Get Photos</button>
-
-      <button onClick={async ()=>{
-        const data = await fetchVideos('cat')
-        console.log(data.videos);
-        }}>Get Videos</button>
+     <SearchBar/>
+     <Tabs/>
+     <ResultGrid/>
     </>
   )
 }
